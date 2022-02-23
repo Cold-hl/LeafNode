@@ -1,0 +1,16 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <button type="submit" name="start" value="1">test_start</button>
+    <button type="submit" name="over" value="0">test_over</button>
+    <div>{{ state }}</div>
+</form>
+</body>
+</html>
