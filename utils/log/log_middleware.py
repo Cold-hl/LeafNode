@@ -65,7 +65,7 @@ class LogMiddle(MiddlewareMixin):
             elif '<!DOCTYPE html>' in content:
                 content = "DATA IS HTML"
             else:
-                content = "DATA NOT JSON:" + content
+                content = "DATA NOT JSON"
 
         message = '%s: [%s] \'%s\' %s [%s] SYSTEM_RESPONSE :: %s' % (ip, localtime, path, method, status_code, content)
         logger.info(message)

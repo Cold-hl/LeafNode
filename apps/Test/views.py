@@ -10,5 +10,5 @@ class Test(View):
 
     """
 
-    def get(self, requesst):
-        return HttpResponse("demo1")
+    def get(self, request):
+        return render(request, "Node.html")
