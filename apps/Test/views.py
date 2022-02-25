@@ -11,4 +11,4 @@ class Test(View):
     """
 
     def get(self, request):
-        return render(request, "Node.html")
+        return render(request, "index/index.html")

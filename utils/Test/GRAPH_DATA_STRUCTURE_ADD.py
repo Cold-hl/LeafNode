@@ -1,4 +1,4 @@
-from py2neo import Node, Relationship
+from py2neo import Node, Relationship, Graph
 
 # 可以通过Node或Relationship对象创建
 a = Node('Person', name='Alice')
@@ -38,3 +38,14 @@ ab = Relationship(a, 'KNOWS', b)
 ac = Relationship(a, 'KNOWS', c)
 w = ab + Relationship(b, 'LIKES', c) + ac
 print(w)
+# graph_1 = Graph()
+# graph_2 = Graph(host="localhost")
+# graph_3 = Graph("http://localhost:7474/db/data/")
+graph = Graph("http://neo4j:123456@127.0.0.1:7474/")
+graph.create(w)
+
+
+def deleteNode(thisNodeID):
+    graph.run("MATCH (n) where id(n) = $nodeID DETACH DELETE n",
+              parameters={"nodeID": thisNodeID})
+
